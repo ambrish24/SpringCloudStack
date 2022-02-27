@@ -23,8 +23,10 @@
 	</properties>
 
   <modules>
+    <module>eurekaserver</module>
     <module>configserver</module>
     <module>licensing-service</module>
+    <module>organization-service</module>
   </modules>
   <build>
     <plugins>
