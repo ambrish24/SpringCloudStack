@@ -47,7 +47,7 @@ public class LicenseService {
 
 	@Autowired
 	OrganizationDiscoveryClient organizationDiscoveryClient;
-
+	
 	private static final Logger logger = LoggerFactory.getLogger(LicenseService.class);
 
 	public License getLicense(String licenseId, String organizationId, String clientType){
@@ -136,16 +136,14 @@ public class LicenseService {
 		return fallbackList;
 	}
 
-	private void randomlyRunLong() throws TimeoutException{
+	private void randomlyRunLong(){
 		Random rand = new Random();
 		int randomNum = rand.nextInt((3 - 1) + 1) + 1;
 		if (randomNum==3) sleep();
 	}
-	private void sleep() throws TimeoutException{
+	private void sleep(){
 		try {
-			System.out.println("Sleep");
-			Thread.sleep(5000);
-			throw new java.util.concurrent.TimeoutException();
+			Thread.sleep(11000);
 		} catch (InterruptedException e) {
 			logger.error(e.getMessage());
 		}
