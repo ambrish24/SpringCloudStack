@@ -47,7 +47,7 @@ public class LicenseService {
 
 	@Autowired
 	OrganizationDiscoveryClient organizationDiscoveryClient;
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(LicenseService.class);
 
 	public License getLicense(String licenseId, String organizationId, String clientType){
@@ -70,23 +70,7 @@ public class LicenseService {
 	private Organization retrieveOrganizationInfo(String organizationId, String clientType) {
 		Organization organization = null;
 
-		switch (clientType) {
-		case "feign":
-			System.out.println("I am using the feign client");
-			organization = organizationFeignClient.getOrganization(organizationId);
-			break;
-		case "rest":
-			System.out.println("I am using the rest client");
-			organization = organizationRestClient.getOrganization(organizationId);
-			break;
-		case "discovery":
-			System.out.println("I am using the discovery client");
-			organization = organizationDiscoveryClient.getOrganization(organizationId);
-			break;
-		default:
-			organization = organizationRestClient.getOrganization(organizationId);
-			break;
-		}
+		organization = organizationRestClient.getOrganization(organizationId);
 
 		return organization;
 	}

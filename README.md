@@ -49,3 +49,19 @@ psql -U postgres
 \c databasename
 \dt
 ```
+
+# Keycloak - Setting Client Secret ID
+For ostock client, this has been set in realm-export.json file using below code:
+```bash
+"clientId": "ostock",
+      "rootUrl": "http://localhost:8081",
+      "adminUrl": "",
+      "surrogateAuthRequired": false,
+      "enabled": true,
+      "alwaysDisplayInConsole": false,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "ef2r4lewqi0npcN0mxpaanyk0Ynp4I2x",
+      "redirectUris": [
+        "http://localhost:8081/*"
+      ],
+```
