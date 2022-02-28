@@ -1,9 +1,12 @@
 
 # Introduction
 
-1.  A Spring Cloud Config server that is deployed as Docker container and can manage a services configuration information using a file system/ classpath or GitHub-based repository.
-2.  A licensing service that will manage licensing data used within Ostock.
-3.  A Postgres SQL database used to hold the data.
+1. A Spring Cloud Config server that is deployed as Docker container and can manage a services configuration information using a file system/ classpath or GitHub-based repository.
+2. A Eureka server running as a Spring-Cloud based service. This service will allow multiple service instances to register with it. Clients that need to call a service will use Eureka to lookup the physical location of the target service.
+3. A organization service that will manage organization data used within Ostock.
+4. A licensing service that will manage licensing data used within Ostock.
+5. The licensing service will also show the ssage of Spring Cloud and Resilience4j project to help protect service clients from failing or poorly behaving services by showcasing the concepts of fail-fast service calls, bulkheads and fallbacks for when a client call fails.
+6. A Postgres SQL database used to hold the data.
 
 ## Initial Configuration
 1.	Apache Maven (http://maven.apache.org)  All of the code examples in this book have been compiled with Java version 11.
